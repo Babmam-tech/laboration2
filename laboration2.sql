@@ -50,3 +50,13 @@ INSERT INTO access_card (card_number, issue_date, expiry_date, employee_id)
 VALUES ('KORT-1001', '2021-03-15', '2026-03-15', 1),
        ('KORT-1002', '2022-08-01', '2027-08-01', 2),
        ('KORT-1003', '2020-05-20', '2025-05-20', 4);
+
+SELECT e.first_name, e.last_name, d.name
+FROM employee AS e
+         INNER JOIN department AS d
+                    ON e.department_id = d.department_id;
+
+SELECT d.name, e.first_name, e.last_name
+FROM department AS d
+         LEFT JOIN employee AS e
+                   ON d.department_id = e.department_id;
